@@ -1,6 +1,13 @@
 # ef_ext_bulk_merge_error
 
 ```c#
+var options = new DbContextOptionsBuilder<FooDbContext>()
+                .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString("N"))
+                .Options;
+await using var dbContext = new FooDbContext(options) ;
+
+//....
+
 // The bulk insert works correctly as explained here: https://entityframework-extensions.net/efcore-inmemory-provider#create-database-context
 await dbContext.Fooes.BulkInsertAsync(fooEntities, opt =>
 {
