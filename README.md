@@ -25,4 +25,5 @@ await dbContext.Fooes.BulkMergeAsync(fooEntities, opt =>
 Tested using:
 - .Net Core 3
 - Visual Studio 16.7.6
-* The error occurs using the dotnet commands...
+
+The error also occurs using the dotnet commands... 
